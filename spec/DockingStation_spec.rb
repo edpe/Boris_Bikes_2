@@ -14,13 +14,17 @@ describe DockingStation do
 
   it "chech if dock is empty" do
     expect(subject.bikes.empty?).to eq true
-    #expect(:@bikes.empty?).to eq false
   end
 
-  #it "does the bike dock successfully" do
-    #test_bike = subject.release_bike
-    #expect(subject.dock(test_bike).include?(test_bike)).to eq false
+  it "does the bike dock successfully" do
+    test_bike = subject.release_bike
+    expect(subject.dock(test_bike).include?(test_bike)).to eq true
+  end
 
-  #end
+  it "returns a stored bike" do
+    test_bike = subject.release_bike
+    subject.dock(test_bike)
+    expect(subject.bike).to eq test_bike
+  end
 
 end

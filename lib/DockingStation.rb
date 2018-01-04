@@ -13,6 +13,10 @@ class DockingStation
     @bikes << bike
   end
 
+  def bike
+    bikes.sample
+  end
+
 end
 
 
