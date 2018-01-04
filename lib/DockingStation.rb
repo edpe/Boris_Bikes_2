@@ -6,6 +6,7 @@ class DockingStation
   end
 
   def release_bike
+    raise if bikes.empty? == true
     Bike.new
   end
 
