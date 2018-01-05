@@ -6,8 +6,7 @@ describe DockingStation do
 
   it "gets bike and expects it to be working" do
     subject.dock(Bike.new)
-    bike = subject.release_bike
-    expect(bike).to be_working
+    expect(subject.dock(Bike.new)).to be_working
   end
 
   it "checks that dock is working" do
@@ -15,13 +14,12 @@ describe DockingStation do
   end
 
   it "check if dock is empty" do
-    expect(subject.bikes.empty?).to eq true
+    expect(subject.bikes == nil).to eq true
   end
 
   it "does the bike dock successfully" do
-    subject.dock(Bike.new)
-    test_bike = subject.release_bike
-    expect(subject.dock(test_bike).include?(test_bike)).to eq true
+    test_bike = Bike.new
+    expect(subject.dock(test_bike)).to eq test_bike
   end
 
   it "returns a stored bike" do
