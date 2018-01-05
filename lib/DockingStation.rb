@@ -6,7 +6,7 @@ class DockingStation
   end
 
   def release_bike
-    raise if bikes.empty? == true
+    raise 'NO BIKE AVAILABLE' if bikes.empty? == true
     Bike.new
   end
 
